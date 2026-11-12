@@ -183,7 +183,7 @@ body {
 
 .sidebar-menu .dropdown-toggle::after {
     content: '\f282';
-    font-family: 'bootstrap-icons';
+    font-family: 'bootstrap-icons', sans-serif;
     margin-left: auto;
     font-size: 0.7rem;
     color: var(--ink-faint);
@@ -449,7 +449,7 @@ body {
 }
 #confirmModal .btn-close::before {
     content: '\f659';
-    font-family: 'bootstrap-icons';
+    font-family: 'bootstrap-icons', sans-serif;
     font-size: 0.95rem;
 }
 #confirmModal .btn-close:hover { color: var(--ink); background-color: rgba(255,255,255,0.06); }
