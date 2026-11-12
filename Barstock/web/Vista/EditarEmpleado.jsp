@@ -71,28 +71,28 @@
                     <input type="hidden" name="idUsuarios" value="${usuario.idUsuarios}">
 
                     <div class="col-md-6">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" value="${usuario.nombre}" required>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Nombre" value="${usuario.nombre}" required>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Apellido</label>
-                        <input type="text" name="apellido" class="form-control" value="${usuario.apellido}" required>
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" class="form-control" aria-label="Apellido" value="${usuario.apellido}" required>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Correo (Inicio de Sesión)</label>
-                        <input type="email" class="form-control" value="${usuario.correo}" disabled>
+                        <label for="correo" class="form-label">Correo (Inicio de Sesión)</label>
+                        <input type="email" id="correo" class="form-control" aria-label="Correo" value="${usuario.correo}" disabled>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Contraseña</label>
-                        <input type="text" class="form-control" value="••••••••" disabled>
+                        <label for="contrasena" class="form-label">Contraseña</label>
+                        <input type="text" id="contrasena" class="form-control" aria-label="Contraseña" value="••••••••" disabled>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Tipo de Documento</label>
-                        <select class="form-select" disabled>
+                        <label for="tipoDoc" class="form-label">Tipo de Documento</label>
+                        <select id="tipoDoc" aria-label="Tipo de Documento" class="form-select" disabled>
                             <c:forEach var="td" items="${listaTiposDoc}">
                                 <option ${usuario.idTipoDocumento == td.idTipoDocumento ? 'selected' : ''}>
                                     ${td.nombre_documento}
@@ -102,8 +102,8 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Número de Documento</label>
-                        <input type="text" class="form-control" value="${usuario.nombre_documento}" disabled>
+                        <label for="numDoc" class="form-label">Número de Documento</label>
+                        <input type="text" id="numDoc" class="form-control" aria-label="Número de Documento" value="${usuario.nombre_documento}" disabled>
                     </div>
 
                     <div class="col-12">
@@ -115,13 +115,13 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Teléfono</label>
-                        <input type="text" name="telefono" class="form-control" value="${usuario.telefono}" required>
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" class="form-control" aria-label="Teléfono" value="${usuario.telefono}" required>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Dirección</label>
-                        <input type="text" name="direccion" class="form-control" value="${usuario.direccion}" required>
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" class="form-control" aria-label="Dirección" value="${usuario.direccion}" required>
                     </div>
 
                     <div class="col-12 mt-4">
