@@ -64,17 +64,17 @@
             }
         %>
 
-        <%-- FORMULARIO CORREGIDO: Nombres de input coinciden con el Servlet --%>
+        <%-- FORMULARIO CORREGIDO: Nombres de input coinciden con el Servlet e IDs con los Labels --%>
         <form action="${pageContext.request.contextPath}/ServletLogin" method="POST">
             <input type="hidden" name="accion" value="ingresar">
 
             <div class="input-group-custom">
-                <label>Correo Electrónico</label>
-                <input type="email" name="txtCorreo" placeholder="usuario@barstock.com" required>
+                <label for="txtCorreo">Correo Electrónico</label>
+                <input type="email" name="txtCorreo" id="txtCorreo" placeholder="usuario@barstock.com" required>
             </div>
             
             <div class="input-group-custom">
-                <label>Contraseña</label>
+                <label for="txtContrasena">Contraseña</label>
                 <div class="password-wrapper">
                     <input type="password" name="txtContrasena" id="txtContrasena" placeholder="••••••••" required>
                     <button type="button" class="toggle-password" tabindex="-1" aria-label="Mostrar contraseña" onclick="togglePassword(this, 'txtContrasena')">
