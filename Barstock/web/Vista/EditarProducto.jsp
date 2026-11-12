@@ -51,23 +51,23 @@
                     <input type="hidden" name="id" value="${producto.id}">
 
                     <div class="col-md-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" value="${producto.nombre}" required>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Nombre" value="${producto.nombre}" required>
                     </div>
 
                     <div class="col-md-2">
-                        <label class="form-label">Precio</label>
-                        <input type="number" step="0.01" name="precio" class="form-control" value="${producto.precio}" required>
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" id="precio" step="0.01" name="precio" class="form-control" aria-label="Precio" value="${producto.precio}" required>
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label">Vencimiento</label>
-                        <input type="date" name="fecha_vencimiento" class="form-control" value="${producto.fecha_vencimiento}" required>
+                        <label for="fecha_vencimiento" class="form-label">Vencimiento</label>
+                        <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" class="form-control" aria-label="Vencimiento" value="${producto.fecha_vencimiento}" required>
                     </div>
 
                     <div class="col-md-2">
-                        <label class="form-label">Categoría</label>
-                        <select name="idCategoria" class="form-control" required>
+                        <label for="idCategoria" class="form-label">Categoría</label>
+                        <select id="idCategoria" name="idCategoria" class="form-control" aria-label="Categoría" required>
                             <option value="">Seleccione...</option>
                             <c:forEach var="cat" items="${listaCategorias}">
                                 <!-- Selecciona automáticamente la categoría que ya tenía asignada el producto -->
