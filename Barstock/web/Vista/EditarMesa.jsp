@@ -70,26 +70,27 @@
                     <input type="hidden" name="idMesa" value="${mesa.idMesa}">
 
                     <div class="col-md-5">
-                        <label class="form-label">Nombre de la Mesa</label>
-                        <input type="text" name="numero" class="form-control" value="${mesa.numero_mesa}" required>
+                        <label for="numero" class="form-label">Nombre de la Mesa</label>
+                        <input type="text" id="numero" name="numero" class="form-control" aria-label="Nombre de la Mesa" value="${mesa.numero_mesa}" required>
                     </div>
                     
                     <div class="col-md-3">
-                        <label class="form-label">Capacidad</label>
-                        <input type="number" name="capacidad" class="form-control" value="${mesa.capacidad}" required>
+                        <label for="capacidad" class="form-label">Capacidad</label>
+                        <input type="number" id="capacidad" name="capacidad" class="form-control" aria-label="Capacidad" value="${mesa.capacidad}" required>
                     </div>
 
                     <div class="col-md-4 d-flex align-items-end">
                         <button type="submit" class="btn btn-gold w-100">Actualizar Mesa</button>
                     </div>
+                    
                     <div class="col-md-4">
-    <label class="form-label">Estado de la Mesa</label>
-    <select name="estado" class="form-select" required>
-        <option value="Libre" ${mesa.estado == 'Libre' ? 'selected' : ''}>Libre</option>
-        <option value="Ocupado" ${mesa.estado == 'Ocupado' ? 'selected' : ''}>Ocupado</option>
-        <option value="Reservado" ${mesa.estado == 'Reservado' ? 'selected' : ''}>Reservado</option>
-    </select>
-</div>
+                        <label for="estado" class="form-label">Estado de la Mesa</label>
+                        <select id="estado" name="estado" class="form-select" aria-label="Estado de la Mesa" required>
+                            <option value="Libre" ${mesa.estado == 'Libre' ? 'selected' : ''}>Libre</option>
+                            <option value="Ocupado" ${mesa.estado == 'Ocupado' ? 'selected' : ''}>Ocupado</option>
+                            <option value="Reservado" ${mesa.estado == 'Reservado' ? 'selected' : ''}>Reservado</option>
+                        </select>
+                    </div>
                 </form>
             </div>
         </main>
