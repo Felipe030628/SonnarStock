@@ -312,7 +312,7 @@ body {
 
 .sidebar-menu .dropdown-toggle::after {
     content: '\f282';
-    font-family: 'bootstrap-icons';
+    font-family: 'bootstrap-icons', sans-serif;
     margin-left: auto;
     font-size: 0.7rem;
     color: var(--ink-faint);
