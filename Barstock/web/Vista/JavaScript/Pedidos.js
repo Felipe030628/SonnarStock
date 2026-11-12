@@ -39,10 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const opt = selectProducto.options[selectProducto.selectedIndex];
         if (!opt || !opt.value) return null;
         return {
-            id: parseInt(opt.value, 10),
+            // CORRECCIÓN: Uso de Number.parseInt
+            id: Number.parseInt(opt.value, 10),
             nombre: opt.textContent.trim().split(" — ")[0].trim(),
-            precio: parseFloat(opt.dataset.precio || "0"),
-            stock: parseInt(opt.dataset.stock || "0", 10)
+            // CORRECCIÓN: Uso de Number.parseFloat
+            precio: Number.parseFloat(opt.dataset.precio || "0"),
+            // CORRECCIÓN: Uso de Number.parseInt
+            stock: Number.parseInt(opt.dataset.stock || "0", 10)
         };
     }
 
@@ -96,7 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cuerpoCarrito.querySelectorAll(".btn-quitar-linea").forEach(btn => {
             btn.addEventListener("click", function () {
-                const idx = parseInt(this.dataset.index, 10);
+                // CORRECCIÓN: Uso de Number.parseInt
+                const idx = Number.parseInt(this.dataset.index, 10);
                 carrito.splice(idx, 1);
                 renderCarrito();
             });
@@ -105,7 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnAgregar.addEventListener("click", function () {
         const p = productoSeleccionado();
-        const cantidad = parseInt(inputCantidad.value, 10);
+        // CORRECCIÓN: Uso de Number.parseInt
+        const cantidad = Number.parseInt(inputCantidad.value, 10);
 
         if (!p) {
             alert("Seleccioná un producto.");
