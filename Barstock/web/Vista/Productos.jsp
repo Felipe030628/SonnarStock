@@ -94,20 +94,20 @@
                 <h5>Registrar Nuevo Producto</h5>
                 <form action="${pageContext.request.contextPath}/Producto?accion=guardar" method="POST" class="row g-3" id="formProducto">
                     <div class="col-md-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" placeholder="Ej. Ron Añejo 750ml" required>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Nombre" placeholder="Ej. Ron Añejo 750ml" required>
                     </div>
                     <div class="col-md-2">
-                        <label class="form-label">Precio</label>
-                        <input type="number" step="0.01" name="precio" class="form-control" placeholder="0.00" required>
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" id="precio" step="0.01" name="precio" class="form-control" aria-label="Precio" placeholder="0.00" required>
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">Vencimiento</label>
-                        <input type="date" name="fecha_vencimiento" class="form-control" required>
+                        <label for="fecha_vencimiento" class="form-label">Vencimiento</label>
+                        <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" class="form-control" aria-label="Vencimiento" required>
                     </div>
                     <div class="col-md-2">
-                        <label class="form-label">Categoría</label>
-                        <select name="idCategoria" class="form-select" required>
+                        <label for="idCategoria" class="form-label">Categoría</label>
+                        <select id="idCategoria" name="idCategoria" class="form-select" aria-label="Categoría" required>
                             <option value="">Seleccione...</option>
                             <c:forEach var="cat" items="${listaCategorias}">
                                 <option value="${cat.idCategorias}">${cat.nombre_categoria}</option>
