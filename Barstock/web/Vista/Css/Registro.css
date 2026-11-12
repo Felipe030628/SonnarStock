@@ -1,0 +1,291 @@
+/* ==========================================================================
+   Estilos Premium Lounge (Idéntico al Login con nuevos campos) - BarStock 
+   ========================================================================== */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d; /* Fondo oscuro puro idéntico al Login */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 40px 20px; /* Un poco más de aire arriba y abajo para scrolling suave */
+}
+
+/* Tarjeta contenedora idéntica a la de Login */
+.register-container {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 40%), #1a1a1a;
+    border: 1px solid #262626;
+    border-top: 1px solid rgba(205, 166, 97, 0.5);
+    border-radius: 18px;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 580px; /* Ajuste milimétrico para balancear las nuevas columnas */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Tipografía de marca corporativa */
+.brand-title {
+    font-family: 'Great Vibes', cursive;
+    color: #cda661; /* Dorado mate idéntico */
+    font-size: 3.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.brand-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #8c8c8c;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+/* Etiquetas del formulario (Mayúsculas, doradas y negrita) */
+.form-label-premium {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #cda661;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Campos de entrada idénticos al Login */
+.form-control-premium {
+    background-color: #202020 !important;
+    border: 1px solid #2e2e2e !important;
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control-premium:hover { border-color: #3d3d3d !important; }
+
+.form-control-premium:focus {
+    border-color: #cda661 !important;
+    box-shadow: 0 0 0 3px rgba(205, 166, 97, 0.15) !important;
+    background-color: #242424 !important;
+}
+
+/* Modificación de flechas de los select nativos para acoplarse al color de la app */
+select.form-control-premium {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cda661' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 10px;
+    appearance: none;
+}
+
+/* Botón "ENTRAR AL SISTEMA" / "REGISTRAR USUARIO" */
+.btn-gold-premium {
+    background-color: #cda661 !important;
+    color: #0d0d0d !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-gold-premium:hover {
+    background-color: #d9b87a !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(205, 166, 97, 0.35);
+}
+.btn-gold-premium:active { transform: translateY(-1px); }
+
+/* Enlaces del pie de la tarjeta */
+.link-footer {
+    font-size: 0.85rem;
+    color: #8c8c8c;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+.link-footer span {
+    color: #cda661;
+    font-weight: 600;
+}
+/* ==========================================================================
+   Campo de contraseña con botón mostrar/ocultar
+   ========================================================================== */
+.input-group-premium {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group-premium .form-control-premium {
+    width: 100%;
+    padding-right: 3rem;
+}
+
+.btn-toggle-pass {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    color: #8c8c8c;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.btn-toggle-pass:hover { color: #cda661; }
+
+/* ==========================================================================
+   Medidor de seguridad de la contraseña
+   ========================================================================== */
+.password-strength-meter {
+    width: 100%;
+    height: 5px;
+    background-color: #2e2e2e;
+    border-radius: 4px;
+    margin-top: 0.6rem;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-text {
+    display: block;
+    font-size: 0.75rem;
+    color: #8c8c8c;
+    margin-top: 0.4rem;
+    letter-spacing: 0.3px;
+}
+
+.input-error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2) !important;
+}
+
+/* ==========================================================================
+   Checkbox de Términos y Condiciones
+   ========================================================================== */
+.form-check-premium {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding-left: 0;
+}
+
+.form-check-input-premium {
+    width: 1.1rem;
+    height: 1.1rem;
+    min-width: 1.1rem;
+    margin-top: 0.15rem;
+    background-color: #202020;
+    border: 1px solid #3d3d3d;
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.form-check-input-premium:checked {
+    background-color: #cda661;
+    border-color: #cda661;
+}
+
+.form-check-input-premium:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid #0d0d0d;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form-check-label-premium {
+    font-size: 0.82rem;
+    color: #c7c7c7;
+    line-height: 1.4;
+}
+
+.terms-link {
+    color: #cda661;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.terms-link:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   Modal de Términos y Condiciones
+   ========================================================================== */
+.modal-content-premium {
+    background-color: #1a1a1a;
+    border: 1px solid #262626;
+    border-top: 1px solid rgba(205, 166, 97, 0.5);
+    color: #e0e0e0;
+    border-radius: 14px;
+}
+
+.modal-content-premium .modal-header,
+.modal-content-premium .modal-footer {
+    border-color: #262626;
+}
+
+.modal-content-premium .modal-title {
+    color: #cda661;
+    font-weight: 700;
+}
+
+.modal-content-premium .modal-body p {
+    font-size: 0.9rem;
+    color: #c7c7c7;
+    line-height: 1.6;
+}
+
+.modal-content-premium .modal-body strong {
+    color: #cda661;
+}
+
+.modal-btn-close {
+    width: auto;
+    padding: 0.6rem 1.5rem;
+    margin-top: 0;
+}
+
+/* Estilos personalizados para alertas en entornos oscuros */
+.alert-premium-success {
+    background-color: rgba(25, 135, 84, 0.2) !important;
+    border: 1px solid #198754 !important;
+    color: #4df3a5 !important;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+.alert-premium-danger {
+    background-color: rgba(220, 53, 69, 0.2) !important;
+    border: 1px solid #dc3545 !important;
+    color: #ff7685 !important;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}

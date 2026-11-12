@@ -1,0 +1,195 @@
+/* Variables de color BarStock */
+:root {
+    --gold: #c5a059;
+    --dark-deep: #0d0d0d;
+    --dark-card: #1a1a1a;
+    --text-gray: #a0a0a0;
+}
+
+body {
+    background-color: var(--dark-deep);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: white;
+}
+
+.login-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 40%), var(--dark-card);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-top: 1px solid rgba(197, 160, 89, 0.5);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.brand-title {
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 4rem;
+    margin-bottom: 0.2rem;
+}
+
+.subtitle {
+    color: var(--text-gray);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    display: block;
+}
+
+/* Alertas de Excepción */
+.error-toast {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    color: #ff808b;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group-custom {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.input-group-custom label {
+    display: block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.input-group-custom input {
+    width: 100%;
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    padding: 14px 16px;
+    color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-group-custom input:hover { border-color: #3d3d3d; }
+
+.input-group-custom input:focus {
+    border-color: var(--gold);
+    outline: none;
+    background: #242424;
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.password-wrapper:hover {
+    border-color: #3d3d3d;
+}
+
+.password-wrapper:focus-within {
+    border-color: var(--gold);
+    background: #242424;
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.password-wrapper input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.password-wrapper input:hover,
+.password-wrapper input:focus {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.toggle-password {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.toggle-password:hover,
+.toggle-password:focus {
+    color: var(--gold);
+    outline: none;
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-gold {
+    width: 100%;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-gold:hover {
+    background: #d4b375;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
+}
+.btn-gold:active { transform: translateY(-1px); }
+
+.footer-links {
+    margin-top: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.gold-span {
+    color: var(--gold);
+    font-weight: bold;
+}
