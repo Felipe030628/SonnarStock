@@ -60,56 +60,55 @@
         <form action="UsuariosCont" method="POST">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="form-label-premium">Nombre</label>
-                    <input type="text" name="txtnombre" class="form-control form-control-premium" required>
+                    <label for="txtnombre" class="form-label-premium">Nombre</label>
+                    <input type="text" id="txtnombre" name="txtnombre" class="form-control form-control-premium" aria-label="Nombre" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="form-label-premium">Apellido</label>
-                    <input type="text" name="txtapellido" class="form-control form-control-premium" required>
+                    <label for="txtapellido" class="form-label-premium">Apellido</label>
+                    <input type="text" id="txtapellido" name="txtapellido" class="form-control form-control-premium" aria-label="Apellido" required>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label-premium">Correo Electrónico</label>
-                <input type="email" name="txtemail" class="form-control form-control-premium" placeholder="usuario@barstock.com" required>
+                <label for="txtemail" class="form-label-premium">Correo Electrónico</label>
+                <input type="email" id="txtemail" name="txtemail" class="form-control form-control-premium" aria-label="Correo Electrónico" placeholder="usuario@barstock.com" required>
             </div>
 
             <div class="mb-3">
-                <label class="form-label-premium">Fecha de Nacimiento</label>
-                <input type="date" name="txtfechaNac" class="form-control form-control-premium" required>
+                <label for="txtfechaNac" class="form-label-premium">Fecha de Nacimiento</label>
+                <input type="date" id="txtfechaNac" name="txtfechaNac" class="form-control form-control-premium" aria-label="Fecha de Nacimiento" required>
             </div>
 
             <div class="row">
                 <div class="col-md-5 mb-3">
-                    <label class="form-label-premium">Tipo Documento</label>
-                    <select name="txtIdTipoDoc" class="form-select form-control-premium">
+                    <label for="txtIdTipoDoc" class="form-label-premium">Tipo Documento</label>
+                    <select id="txtIdTipoDoc" name="txtIdTipoDoc" class="form-select form-control-premium" aria-label="Tipo Documento">
                         <option value="1">Cédula de Ciudadanía</option>
                         <option value="2">Pasaporte</option>
                         <option value="3">PPT</option>
                     </select>
                 </div>
                 <div class="col-md-7 mb-3">
-                    <label class="form-label-premium">Número de Documento</label>
-                    <input type="text" name="txtnumdoc" minlength="7" maxlength="20" class="form-control form-control-premium" required>
+                    <label for="txtnumdoc" class="form-label-premium">Número de Documento</label>
+                    <input type="text" id="txtnumdoc" name="txtnumdoc" minlength="7" maxlength="20" class="form-control form-control-premium" aria-label="Número de Documento" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-5 mb-3">
-                    <label class="form-label-premium">Teléfono</label>
-                    <input type="tel" name="txttel" minlength="7" maxlength="20" class="form-control form-control-premium" required>
+                    <label for="txttel" class="form-label-premium">Teléfono</label>
+                    <input type="tel" id="txttel" name="txttel" minlength="7" maxlength="20" class="form-control form-control-premium" aria-label="Teléfono" required>
                 </div>
                 <div class="col-md-7 mb-3">
-                    <label class="form-label-premium">Dirección de Residencia</label>
-                    <input type="text" name="txtdireccion" class="form-control form-control-premium">
+                    <label for="txtdireccion" class="form-label-premium">Dirección de Residencia</label>
+                    <input type="text" id="txtdireccion" name="txtdireccion" class="form-control form-control-premium" aria-label="Dirección de Residencia">
                 </div>
             </div>
 
-
             <div class="mb-2">
-                <label class="form-label-premium">Contraseña</label>
+                <label for="txtpass" class="form-label-premium">Contraseña</label>
                 <div class="input-group-premium">
-                    <input type="password" id="txtpass" name="txtpass" class="form-control form-control-premium" minlength="8" required>
+                    <input type="password" id="txtpass" name="txtpass" class="form-control form-control-premium" aria-label="Contraseña" minlength="8" required>
                     <button type="button" class="btn-toggle-pass" data-target="txtpass" aria-label="Mostrar contraseña">
                         <i class="bi-eye"></i>
                     </button>
@@ -121,9 +120,9 @@
             </div>
 
             <div class="mb-4">
-                <label class="form-label-premium">Confirmar Contraseña</label>
+                <label for="txtpassConfirm" class="form-label-premium">Confirmar Contraseña</label>
                 <div class="input-group-premium">
-                    <input type="password" id="txtpassConfirm" name="txtpassConfirm" class="form-control form-control-premium" minlength="8" required>
+                    <input type="password" id="txtpassConfirm" name="txtpassConfirm" class="form-control form-control-premium" aria-label="Confirmar Contraseña" minlength="8" required>
                     <button type="button" class="btn-toggle-pass" data-target="txtpassConfirm" aria-label="Mostrar contraseña">
                         <i class="bi-eye"></i>
                     </button>
@@ -132,7 +131,7 @@
             </div>
 
             <div class="mb-4 form-check-premium">
-                <input type="checkbox" id="txtterminos" name="txtterminos" class="form-check-input-premium" required>
+                <input type="checkbox" id="txtterminos" name="txtterminos" class="form-check-input-premium" aria-label="Aceptar Términos y Condiciones" required>
                 <label for="txtterminos" class="form-check-label-premium">
                     He leído y acepto los
                     <a href="#" data-bs-toggle="modal" data-bs-target="#modalTerminos" class="terms-link">Términos y Condiciones</a>
