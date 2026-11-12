@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var counters = document.querySelectorAll('.stat-number');
 
     function animateCounter(el) {
-        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        // CORRECCIÓN: Se usa Number.parseInt en lugar de parseInt global
+        var target = Number.parseInt(el.getAttribute('data-count'), 10) || 0;
         if (prefersReducedMotion) {
             el.textContent = target;
             return;
