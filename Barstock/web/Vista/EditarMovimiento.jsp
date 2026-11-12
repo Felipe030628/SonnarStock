@@ -51,8 +51,8 @@
                     <input type="hidden" name="idMovimiento" value="${movimiento.idMovimiento}">
 
                     <div class="col-md-3">
-                        <label class="form-label">Producto</label>
-                        <select name="idProducto" class="form-select" required>
+                        <label for="idProducto" class="form-label">Producto</label>
+                        <select id="idProducto" name="idProducto" class="form-select" aria-label="Producto" required>
                             <option value="" disabled>Seleccione Producto</option>
                             <c:forEach var="p" items="${listaProd}">
                                 <option value="${p.id}" ${p.id == movimiento.idProducto ? 'selected' : ''}>
@@ -63,18 +63,18 @@
                     </div>
 
                     <div class="col-md-2">
-                        <label class="form-label">Cantidad</label>
-                        <input type="number" name="cantidad" class="form-control" value="${movimiento.cantidad}" required>
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" id="cantidad" name="cantidad" class="form-control" aria-label="Cantidad" value="${movimiento.cantidad}" required>
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label">Motivo</label>
-                        <input type="text" name="motivo" class="form-control" value="Entrada" readonly>
+                        <label for="motivo" class="form-label">Motivo</label>
+                        <input type="text" id="motivo" name="motivo" class="form-control" aria-label="Motivo" value="Entrada" readonly>
                     </div>
 
                     <div class="col-md-2">
-                        <label class="form-label">Fecha</label>
-                        <input type="date" name="fecha" class="form-control" value="${movimiento.fecha}" required>
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" class="form-control" aria-label="Fecha" value="${movimiento.fecha}" required>
                     </div>
 
                     <div class="col-md-2 d-flex align-items-end">
