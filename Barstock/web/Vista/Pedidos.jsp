@@ -75,22 +75,30 @@
                 <form id="formPedido" action="${pageContext.request.contextPath}/Pedido?accion=guardar" method="POST">
 
                     <div class="row g-3 mb-4">
-                        <div class="col-md-4"><input type="text" name="cliente" class="form-control" placeholder="Nombre Cliente" required></div>
+                        <div class="col-md-4">
+                            <label for="clienteInput" class="form-label visually-hidden">Nombre Cliente</label>
+                            <input type="text" id="clienteInput" name="cliente" class="form-control" aria-label="Nombre Cliente" placeholder="Nombre Cliente" required>
+                        </div>
                         <div class="col-md-3">
-                            <select name="mesa" class="form-select" required>
+                            <label for="mesaSelect" class="form-label visually-hidden">Seleccione Mesa</label>
+                            <select id="mesaSelect" name="mesa" class="form-select" aria-label="Seleccione Mesa" required>
                                 <option value="" disabled selected>Seleccione Mesa</option>
                                 <c:forEach var="m" items="${listaMesas}">
                                     <option value="${m.numero_mesa}">${m.numero_mesa} (Cap: ${m.capacidad})</option>
                                 </c:forEach>
                             </select>
                         </div>
-                        <div class="col-md-5"><input type="datetime-local" name="fecha" class="form-control" required></div>
+                        <div class="col-md-5">
+                            <label for="fechaInput" class="form-label visually-hidden">Fecha y Hora</label>
+                            <input type="datetime-local" id="fechaInput" name="fecha" class="form-control" aria-label="Fecha y Hora" required>
+                        </div>
                     </div>
 
                     <label class="form-label">Agregar productos al pedido</label>
                     <div class="selector-producto mb-2">
                         <div>
-                            <select id="selectProducto" class="form-select">
+                            <label for="selectProducto" class="form-label visually-hidden">Seleccione producto</label>
+                            <select id="selectProducto" class="form-select" aria-label="Seleccione producto">
                                 <option value="">Seleccione producto</option>
                                 <c:forEach var="p" items="${listaProductos}">
                                     <option value="${p.id}" data-precio="${p.precio}" data-stock="${p.stock}">
@@ -100,7 +108,8 @@
                             </select>
                         </div>
                         <div>
-                            <input type="number" id="inputCantidad" class="form-control" min="1" value="1" placeholder="Cantidad">
+                            <label for="inputCantidad" class="form-label visually-hidden">Cantidad</label>
+                            <input type="number" id="inputCantidad" class="form-control" aria-label="Cantidad" min="1" value="1" placeholder="Cantidad">
                         </div>
                         <div>
                             <!-- reservado para futuras columnas (p.ej. observaciones) -->

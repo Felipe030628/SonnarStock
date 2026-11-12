@@ -113,24 +113,33 @@
 
             <div class="content-card">
                 <h5>Registrar Movimiento de Stock</h5>
-                <form action="${pageContext.request.contextPath}/Movimiento?accion=guardar" method="POST" class="row g-3">
+                <form action="${pageContext.request.contextPath}/Movimiento?accion=guardar" method="POST" class="row g-3 align-items-end">
+                    
                     <div class="col-md-3">
-                        <select name="idProducto" class="form-select" required>
+                        <label for="productoSelect" class="form-label visually-hidden">Producto</label>
+                        <select id="productoSelect" name="idProducto" class="form-select" aria-label="Producto" required>
                             <option value="" disabled selected>Seleccione Producto</option>
                             <c:forEach var="p" items="${listaProd}">
                                 <option value="${p.id}">${p.nombre}</option>
                             </c:forEach>
                         </select>
                     </div>
+                    
                     <div class="col-md-2">
-                        <input type="number" name="cantidad" class="form-control" placeholder="Cantidad" required>
+                        <label for="cantidadInput" class="form-label visually-hidden">Cantidad</label>
+                        <input type="number" id="cantidadInput" name="cantidad" class="form-control" aria-label="Cantidad" placeholder="Cantidad" required>
                     </div>
+                    
                     <div class="col-md-3">
-                        <input type="text" name="motivo" class="form-control" value="Entrada" readonly>
+                        <label for="motivoInput" class="form-label visually-hidden">Motivo</label>
+                        <input type="text" id="motivoInput" name="motivo" class="form-control" aria-label="Motivo" value="Entrada" readonly>
                     </div>
+                    
                     <div class="col-md-2">
-                        <input type="date" name="fecha" class="form-control" required>
+                        <label for="fechaInput" class="form-label visually-hidden">Fecha</label>
+                        <input type="date" id="fechaInput" name="fecha" class="form-control" aria-label="Fecha" required>
                     </div>
+                    
                     <div class="col-md-2">
                         <button type="submit" class="btn btn-gold w-100">Registrar</button>
                     </div>

@@ -10,7 +10,8 @@ document.querySelectorAll('.add-to-cart').forEach(btn => {
     btn.onclick = () => {
         const item = {
             nombre: btn.dataset.nombre,
-            precio: parseInt(btn.dataset.precio)
+            // CORRECCIÓN: Uso de Number.parseInt
+            precio: Number.parseInt(btn.dataset.precio, 10)
         };
         items.push(item);
         actualizarCarrito();

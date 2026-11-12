@@ -15,68 +15,75 @@
             <i class="bi bi-chevron-left"></i>
         </button>
         <aside class="sidebar">
-            <div class="sidebar-header"><h3>BarStock</h3>
-            <p>Inventario Inteligente</p></div>
+            <div class="sidebar-header">
+                <h3>BarStock</h3>
+                <p>Inventario Inteligente</p>
+            </div>
             <ul class="sidebar-menu">
-    <li>
-        <a href="Vista/Panel.jsp"><i class="bi bi-sliders me-2"></i> Dashboard</a>
-    </li>
+                <li>
+                    <a href="Vista/Panel.jsp"><i class="bi bi-sliders me-2"></i> Dashboard</a>
+                </li>
 
-    <!-- Menú Desplegable: Inventario -->
-    <li class="nav-item dropdown">
-        <a class="dropdown-toggle" href="#" role="button" data-toggle="submenu" data-target="#menuInventario">
-            <i class="bi bi-box-seam me-2"></i> Inventario
-        </a>
-        <ul class="submenu list-unstyled ps-3" id="menuInventario">
-            <!-- Enlace para acceder a la gestión de productos -->
-<li>
-    <a href="${pageContext.request.contextPath}/Producto?accion=listar">Productos</a>
-</li>
-            <li><a href="${pageContext.request.contextPath}/Movimiento?accion=listar"><i class="bi bi-arrow-left-right me-3"></i> Movimientos Stock</a></li>
-        </ul>
-    </li>
+                <!-- Menú Desplegable: Inventario -->
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="submenu" data-target="#menuInventario">
+                        <i class="bi bi-box-seam me-2"></i> Inventario
+                    </a>
+                    <ul class="submenu list-unstyled ps-3" id="menuInventario">
+                        <!-- Enlace para acceder a la gestión de productos -->
+                        <li>
+                            <a href="${pageContext.request.contextPath}/Producto?accion=listar">Productos</a>
+                        </li>
+                        <li><a href="${pageContext.request.contextPath}/Movimiento?accion=listar"><i class="bi bi-arrow-left-right me-3"></i> Movimientos Stock</a></li>
+                    </ul>
+                </li>
 
-    <!-- Menú Desplegable: Gestión de Pedidos -->
-    <li class="nav-item dropdown">
-        <a class="dropdown-toggle" href="#" role="button" data-toggle="submenu" data-target="#menuPedidos">
-            <i class="bi bi-cart-check me-2"></i> Pedidos
-        </a>
-        <ul class="submenu list-unstyled ps-3 show" id="menuPedidos">
-            <li><a href="${pageContext.request.contextPath}/Pedido?accion=listar">
-        <i class="bi bi-cart me-3"></i> Pedidos
-    </a></li>
-    <li>
-    <a href="${pageContext.request.contextPath}/Mesas?accion=listar">
-        <i class="bi bi-ui-checks-grid me-3"></i> Mesas
-    </a>
-</li>
-        </ul>
-    </li>
+                <!-- Menú Desplegable: Gestión de Pedidos -->
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="submenu" data-target="#menuPedidos">
+                        <i class="bi bi-cart-check me-2"></i> Pedidos
+                    </a>
+                    <ul class="submenu list-unstyled ps-3 show" id="menuPedidos">
+                        <li><a href="${pageContext.request.contextPath}/Pedido?accion=listar">
+                            <i class="bi bi-cart me-3"></i> Pedidos
+                        </a></li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/Mesas?accion=listar">
+                                <i class="bi bi-ui-checks-grid me-3"></i> Mesas
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-    <li>
-        <a href="${pageContext.request.contextPath}/UsuariosCont?accion=listar">
-        <i class="bi bi-people me-3"></i> Empleados
-    </a>
-    </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/UsuariosCont?accion=listar">
+                        <i class="bi bi-people me-3"></i> Empleados
+                    </a>
+                </li>
 
-    <li class="mt-5">
-        <a href="${pageContext.request.contextPath}/Logout" class="logout-link">
-            <i class="bi bi-power me-2"></i> Cerrar Sesión
-        </a>
-    </li>
-</ul>
+                <li class="mt-5">
+                    <a href="${pageContext.request.contextPath}/Logout" class="logout-link">
+                        <i class="bi bi-power me-2"></i> Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
         </aside>
 
         <main class="main-content">
             <div class="content-card">
                 <h5>Registrar Nueva Mesa</h5>
-                <form action="${pageContext.request.contextPath}/Mesas?accion=guardar" method="POST" class="row g-3">
+                <form action="${pageContext.request.contextPath}/Mesas?accion=guardar" method="POST" class="row g-3 align-items-end">
+                    
                     <div class="col-md-5">
-                        <input type="text" name="numero" class="form-control" placeholder="Nombre de la Mesa (ej. Mesa 05)" required>
+                        <label for="numeroMesa" class="form-label visually-hidden">Nombre de la Mesa</label>
+                        <input type="text" id="numeroMesa" name="numero" class="form-control" aria-label="Nombre de la Mesa" placeholder="Nombre de la Mesa (ej. Mesa 05)" required>
                     </div>
+                    
                     <div class="col-md-3">
-                        <input type="number" name="capacidad" class="form-control" placeholder="Capacidad" required>
+                        <label for="capacidadMesa" class="form-label visually-hidden">Capacidad</label>
+                        <input type="number" id="capacidadMesa" name="capacidad" class="form-control" aria-label="Capacidad" placeholder="Capacidad" required>
                     </div>
+                    
                     <div class="col-md-4">
                         <button type="submit" class="btn btn-gold w-100">Registrar Mesa</button>
                     </div>
@@ -103,16 +110,16 @@
                                 <td>${m.capacidad}</td>
                                 <td><span class="badge bg-success">${m.estado}</span></td>
                                 <td class="text-center">
-    <button type="button" class="btn btn-warning btn-sm" onclick="location.href='${pageContext.request.contextPath}/Mesas?accion=cargar&id=${m.idMesa}'">
-        <i class="bi bi-pencil-fill"></i>
-    </button>
-        <a href="${pageContext.request.contextPath}/Mesas?accion=eliminar&id=${m.idMesa}" 
-   class="btn btn-danger btn-sm" 
-   title="Eliminar"
-   data-confirm-message="¿Estás seguro de que deseas eliminar esta mesa?">
-    <i class="bi bi-trash-fill"></i>
-</a>
-</td>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href='${pageContext.request.contextPath}/Mesas?accion=cargar&id=${m.idMesa}'">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </button>
+                                    <a href="${pageContext.request.contextPath}/Mesas?accion=eliminar&id=${m.idMesa}" 
+                                       class="btn btn-danger btn-sm" 
+                                       title="Eliminar"
+                                       data-confirm-message="¿Estás seguro de que deseas eliminar esta mesa?">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>
