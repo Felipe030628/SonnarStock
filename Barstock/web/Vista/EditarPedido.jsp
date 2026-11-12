@@ -73,13 +73,13 @@
                     <input type="hidden" name="idPedido" value="${pedido.idPedido}">
 
                     <div class="col-md-3">
-                        <label class="form-label">Cliente</label>
-                        <input type="text" name="cliente" class="form-control" value="${pedido.cliente}" required>
+                        <label for="cliente" class="form-label">Cliente</label>
+                        <input type="text" id="cliente" name="cliente" class="form-control" aria-label="Cliente" value="${pedido.cliente}" required>
                     </div>
                     
                     <div class="col-md-2">
-                        <label class="form-label">Mesa</label>
-                        <select name="mesa" class="form-select" required>
+                        <label for="mesa" class="form-label">Mesa</label>
+                        <select id="mesa" name="mesa" class="form-select" aria-label="Mesa" required>
                             <option value="" disabled>Seleccione Mesa</option>
                             <c:forEach var="m" items="${listaMesas}">
                                 <option value="${m.numero_mesa}" ${m.numero_mesa == pedido.mesa ? 'selected' : ''}>
@@ -90,13 +90,13 @@
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label">Fecha y Hora</label>
-                        <input type="datetime-local" name="fecha" class="form-control" value="${pedido.fecha}" required>
+                        <label for="fecha" class="form-label">Fecha y Hora</label>
+                        <input type="datetime-local" id="fecha" name="fecha" class="form-control" aria-label="Fecha y Hora" value="${pedido.fecha}" required>
                     </div>
 
                     <div class="col-md-2">
-                        <label class="form-label">Total</label>
-                        <input type="number" step="0.01" name="total" class="form-control" value="${pedido.total}" required>
+                        <label for="total" class="form-label">Total</label>
+                        <input type="number" step="0.01" id="total" name="total" class="form-control" aria-label="Total" value="${pedido.total}" required>
                     </div>
 
                     <div class="col-md-2 d-flex align-items-end">
@@ -104,13 +104,13 @@
                     </div>
                     
                     <div class="col-md-2">
-    <label class="form-label">Estado</label>
-    <select name="estado" class="form-select" required>
-        <option value="Pendiente" ${pedido.estado == 'Pendiente' ? 'selected' : ''}>Pendiente</option>
-        <option value="Completado" ${pedido.estado == 'Completado' ? 'selected' : ''}>Completado</option>
-        <option value="Cancelado" ${pedido.estado == 'Cancelado' ? 'selected' : ''}>Cancelado</option>
-    </select>
-</div>
+                        <label for="estado" class="form-label">Estado</label>
+                        <select id="estado" name="estado" class="form-select" aria-label="Estado" required>
+                            <option value="Pendiente" ${pedido.estado == 'Pendiente' ? 'selected' : ''}>Pendiente</option>
+                            <option value="Completado" ${pedido.estado == 'Completado' ? 'selected' : ''}>Completado</option>
+                            <option value="Cancelado" ${pedido.estado == 'Cancelado' ? 'selected' : ''}>Cancelado</option>
+                        </select>
+                    </div>
                 </form>
             </div>
 
